@@ -23,6 +23,12 @@ class Product {
             this.stock -= quantity
         }
     }
+
+    // (Task 5) - Creating a restock method to add within the the restockProduct method in the Inventory Class
+    
+    restock(quantity) {
+        this.stock += quantity
+    }
 }
 
 
@@ -68,6 +74,7 @@ console.log(order1.getOrderDetails())
 console.log(prod1.getdetails())                     // Output: Product: Laptop, ID: 101, Price: $1200, Stock: 5
 
 
+// ---------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -95,6 +102,11 @@ class Inventory {
         })
     }
 
+
+// --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
     // Task 4 - Implementing Order Management
 
     // Creating a method to both push and list all the orders when console-logging it
@@ -109,13 +121,31 @@ class Inventory {
             console.log(order.getOrderDetails())
         })
     }
+
+
+    // --------------------------------------------------------------------------------------------------------------------------------------
+
+
+    // Task 5 - Creating a method restockProduct to find a specific product by ID and restock that specific product
+
+    restockProduct(productID, quantity) {
+        const product = this.products.find(p => p.id === productID)
+        if (product) {
+            product.restock(quantity)
+        }
+    }
 }
 
 // Creating a new product to add with prod1
 
 const prod2 = new Product(`TV`, 102, 500, 10)
 
-// Declaring a variable inventory to then add both products and list them out in the console by console-logging them
+
+
+// --------------------------------------------------------------------------------------------------------------------------------------
+
+
+// (Task 3) - Declaring a variable inventory to then add both products and list them out in the console by console-logging them
 
 const inventory = new Inventory()
 
@@ -124,8 +154,22 @@ inventory.addProduct(prod2)                 // Output: Product: TV, ID: 102, Pri
 
 inventory.listProducts()
 
+
+
+// --------------------------------------------------------------------------------------------------------------------------------------
+
+
 // (Task 4) - Creating an order using the method created and the products as well to make a list of orders and console-logging it
 
 inventory.placeOrder(601, prod1, 2)
 inventory.placeOrder(602, prod2, 3)
 inventory.listOrders()
+
+
+// --------------------------------------------------------------------------------------------------------------------------------------
+
+
+// (Task 5) - Restocking Product 101 (Laptop) with 5 more laptops and console-logging the results
+
+inventory.restockProduct(101, 5)
+console.log(prod1.getdetails())
