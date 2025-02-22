@@ -78,6 +78,7 @@ console.log(prod1.getdetails())                     // Output: Product: Laptop, 
 class Inventory {
     constructor() {
         this.products = []
+        this.orders = []
     }
 
     // Adding products to the array by using .push 
@@ -91,6 +92,21 @@ class Inventory {
     listProducts() {
         this.products.forEach (product => {
             console.log(product.getdetails())
+        })
+    }
+
+    // Task 4 - Implementing Order Management
+
+    // Creating a method to both push and list all the orders when console-logging it
+
+    placeOrder(orderID, product, quantity) {
+            const order = new Order(orderID, product, quantity)
+            this.orders.push(order)
+    }
+
+    listOrders() {
+        this.orders.forEach (order => {
+            console.log(order.getOrderDetails())
         })
     }
 }
@@ -107,3 +123,9 @@ inventory.addProduct(prod1)                 // Output: Product: Laptop, ID: 101,
 inventory.addProduct(prod2)                 // Output: Product: TV, ID: 102, Price: $500, Stock: 10
 
 inventory.listProducts()
+
+// (Task 4) - Creating an order using the method created and the products as well to make a list of orders and console-logging it
+
+inventory.placeOrder(601, prod1, 2)
+inventory.placeOrder(602, prod2, 3)
+inventory.listOrders()
