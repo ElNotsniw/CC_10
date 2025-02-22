@@ -161,9 +161,9 @@ inventory.listProducts()
 
 // (Task 4) - Creating an order using the method created and the products as well to make a list of orders and console-logging it
 
-inventory.placeOrder(601, prod1, 2)
-inventory.placeOrder(602, prod2, 3)
-inventory.listOrders()
+inventory.placeOrder(601, prod1, 2)         // Output: Order ID: 601, Product: Laptop, Quantity: 2, Total Price: $2400
+inventory.placeOrder(602, prod2, 3)         // Output: Order ID: 602, Product: TV, Quantity 3, Total Price: $1500
+inventory.listOrders()                  
 
 
 // --------------------------------------------------------------------------------------------------------------------------------------
@@ -172,4 +172,4 @@ inventory.listOrders()
 // (Task 5) - Restocking Product 101 (Laptop) with 5 more laptops and console-logging the results
 
 inventory.restockProduct(101, 5)
-console.log(prod1.getdetails())
+console.log(prod1.getdetails())         // Output: Product: Laptop, ID: 101, Price $1200, Stock: 8
