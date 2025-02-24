@@ -165,7 +165,9 @@ inventory.listProducts()
 
 inventory.placeOrder(601, prod1, 2)         // Output: Order ID: 601, Product: Laptop, Quantity: 2, Total Price: $2400
 inventory.placeOrder(602, prod2, 3)         // Output: Order ID: 602, Product: TV, Quantity 3, Total Price: $1500
-inventory.listOrders()                  
+inventory.listOrders()
+
+console.log(prod1.getdetails())             // Output: Product: Laptop, ID: 101, Price: $1200, Stock: 3
 
 
 // --------------------------------------------------------------------------------------------------------------------------------------
